@@ -1,5 +1,6 @@
-# Hello, World
-Project done during **Software Engineering program** at **ALX**. It aims to learn about if, if ... else statements, comments, while and for loops, break and continue statements, range and functions in **Python**
+# Project 0x01. Python - if/else, loops, functions
+Project done during **Software Engineering program** at **ALX**. It aims to learn about if,
+if ... else statements, comments, while and for loops, break and continue statements, range and functions in **Python**
 
 ## Technologies
 * Python Scripts are written with Python 3
