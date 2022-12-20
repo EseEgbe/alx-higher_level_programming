@@ -1,4 +1,4 @@
-# Exceptions
+# 0x05. Python - Exceptions
 Project done during **Software Engineering program** at **ALX**. It aims to learn about exceptions and how to use them, the differences between errors and exceptions, how to use and correctly handle exceptions,  and how to raise bult-in exceptions in **Python**.
 
 ## Technologies
