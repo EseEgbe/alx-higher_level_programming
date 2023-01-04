@@ -1,72 +1,50 @@
 #!/usr/bin/python3
-"""Defines a matrix multiplication function."""
+"""
+This module is composed by a function that divides the numbers of a matrix
+"""
 
 
-def matrix_mul(m_a, m_b):
-    """Multiply two matrices.
-
+def matrix_divided(matrix, div):
+    """ Function that divides the integer/float numbers of a matrix
     Args:
-        m_a (list of lists of ints/floats): The first matrix.
-        m_b (list of lists of ints/floats): The second matrix.
-    Raises:
-        TypeError: If either m_a or m_b is not a list of lists of ints/floats.
-        TypeError: If either m_a or m_b is empty.
-        TypeError: If either m_a or m_b has different-sized rows.
-        ValueError: If m_a and m_b cannot be multiplied.
+        matrix: list of a lists of integers/floats
+        div: number which divides the matrix
     Returns:
-        A new matrix representing the multiplication of m_a by m_b.
+        A new matrix with the result of the division
+    Raises:
+        TypeError: If the elements of the matrix aren't lists
+                   If the elemetns of the lists aren't integers/floats
+                   If div is not an integer/float number
+                   If the lists of the matrix don't have the same size
+        ZeroDivisionError: If div is zero
     """
 
-    if m_a == [] or m_a == [[]]:
-        raise ValueError("m_a can't be empty")
-    if m_b == [] or m_b == [[]]:
-        raise ValueError("m_b can't be empty")
+    if not type(div) in (int, float):
+        raise TypeError("div must be a number")
 
-    if not isinstance(m_a, list):
-        raise TypeError("m_a must be a list")
-    if not isinstance(m_b, list):
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
 
-        raise TypeError("m_b must be a list")
+    msg_type = "matrix must be a matrix (list of lists) of integers/floats"
 
-    if not all(isinstance(row, list) for row in m_a):
-        raise TypeError("m_a must be a list of lists")
-    if not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_b must be a list of lists")
+    if not matrix or not isinstance(matrix, list):
+        raise TypeError(msg_type)
 
-    if not all(
-        (isinstance(ele, int) or isinstance(ele, float))
-        for ele in [num for row in m_a for num in row]
-    ):
-        raise TypeError("m_a should contain only integers or floats")
-    if not all(
-        (isinstance(ele, int) or isinstance(ele, float))
-        for ele in [num for row in m_b for num in row]
-    ):
-        raise TypeError("m_b should contain only integers or floats")
+    len_e = 0
+    msg_size = "Each row of the matrix must have the same size"
 
-    if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("each row of m_a must should be of the same size")
-    if not all(len(row) == len(m_b[0]) for row in m_b):
-        raise TypeError("each row of m_b must should be of the same size")
+    for elems in matrix:
+        if not elems or not isinstance(elems, list):
+            raise TypeError(msg_type)
 
-    if len(m_a[0]) != len(m_b):
-        raise ValueError("m_a and m_b can't be multiplied")
+        if len_e != 0 and len(elems) != len_e:
+            raise TypeError(msg_size)
 
-    inverted_b = []
-    for r in range(len(m_b[0])):
-        new_row = []
-        for c in range(len(m_b)):
-            new_row.append(m_b[c][r])
-        inverted_b.append(new_row)
+        for num in elems:
+            if not type(num) in (int, float):
+                raise TypeError(msg_type)
 
-    new_matrix = []
-    for row in m_a:
-        new_row = []
-        for col in inverted_b:
-            prod = 0
-            for i in range(len(inverted_b[0])):
-                prod += row[i] * col[i]
-            new_row.append(prod)
-        new_matrix.append(new_row)
+        len_e = len(elems)
 
-    return new_matrix
+    m = list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
+    return (m)
