@@ -16,3 +16,5 @@ It aims to learn about variable types and scope as well as object creation in Ja
 * What is a closure
 * What is a prototype
 * How to inherit an object from another
+
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
