@@ -1,4 +1,4 @@
-# Project 0x12. JavaScript - Warm up
+# Project 0x13. JavaScript - Objects, Scopes and Closures
 Project done during **Software Engineering program** at **ALX**.
 It aims to learn about variable types and scope as well as object creation in JavaScript.
 
