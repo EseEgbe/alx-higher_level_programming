@@ -3,8 +3,9 @@ Project done during **Software Engineering program** at **ALX**.
 It aims to learn about how to connect to a MySQL database from a Python script, what ORM means and how to map a Python Class to a MySQL table.
 
 ## Technologies
-* `MySQL 8.0` (Version 8.0.28)
-* `SQLAlchemy` (Version 1.4.32)
+* `MySQL 8.0` Version 8.0.28
+* `MySQLdb` Version 2.1.0
+* `SQLAlchemy` Version 1.4.32
 * Python Scripts are written with Python 3
 * Tested on Ubuntu 20.04 LTS
 
