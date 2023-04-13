@@ -1,6 +1,5 @@
 # Project 0x11. Python - Network #1
 Project done during **Software Engineering program** at **ALX**.
-It aims to learn about
 
 ## Learning Objectives
 Learning points in this project include:
